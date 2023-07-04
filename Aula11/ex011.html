@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1> Checagem de Nacionalidade </h1>
+    Digite seu país de origem: <input type="text" name="pais" id="pais">
+    <input type="button" value="Verificar" onclick="checar()">
+    <div id="nac"> 
+
+    </div>
+
+    <script>
+        function checar() {
+        var country = window.document.querySelector('#pais')
+        var nac = window.document.querySelector('#nac')
+        var nacionalidade = (country.value)
+        nac.innerHTML = `<p>Você nasceu em <b>${nacionalidade}</b><p>`
+        
+            if (nacionalidade === 'Brazil' || nacionalidade === 'Brasil') {
+            nac.innerHTML += '<p>É um cidadão <b>Brasileiro</b></p>'
+        } else {
+            nac.innerHTML += '<p>É um cidadão <b>Estrangeiro</b></p>'
+        }
+    }    
+    </script>
+</body>
+</html>
